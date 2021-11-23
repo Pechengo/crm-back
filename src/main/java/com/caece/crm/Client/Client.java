@@ -8,9 +8,9 @@ public class Client {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int idclient;
-	private String name;
-	private String surname;
+	public int idclient;
+	public String name;
+	public String surname;
 	
 	
 	public int getId() {
