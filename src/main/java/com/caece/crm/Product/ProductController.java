@@ -1,4 +1,4 @@
-package com.caece.crm.Client;
+package com.caece.crm.Product;
 
 import java.util.List;
 
@@ -15,31 +15,28 @@ import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
-public class ClientController {
+public class ProductController {
 	@Autowired
-	ClientRepo repo;
+	ProductRepo repo;
 	
-	@GetMapping("/clients")
-	public List<Client> listar(){
+	@GetMapping("/products")
+	public List<Product> listar(){
 		return repo.findAll();
 	}
 	
-	@PostMapping("/clients")
-	void addClient(@RequestBody Client client) {
-		repo.save(client);
+	@PostMapping("/products")
+	void addProduct(@RequestBody Product product) {
+		repo.save(product);
 	}
 	
-	@DeleteMapping(value = "/clients/delete{id}")
-	private ResponseEntity<Boolean> deleteClient(@PathVariable ("id") int id) {
+	@DeleteMapping(value="/products/delete{id}")
+	private ResponseEntity<Boolean> deleteProduct(@PathVariable ("id") int id) {
 		repo.deleteById(id);
 		return ResponseEntity.ok(!(repo.findById(id)!=null));
 	}
 	
-	
-	@PostMapping("/clients/update{id}")
-	void updateClientbyId(@RequestBody Client client) {
-		repo.save(client);
+	@PostMapping("/products/update{id}")
+	void updateProductById(@RequestBody Product product) {
+		repo.save(product);
 	}
-		
-
 }
