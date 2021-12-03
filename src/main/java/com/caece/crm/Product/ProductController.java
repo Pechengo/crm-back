@@ -24,6 +24,11 @@ public class ProductController {
 		return repo.findAll();
 	}
 	
+	@GetMapping("/products{id}")
+	public Product getProduct(@PathVariable ("id") int id) {
+		return repo.findById(id);
+	}
+	
 	@PostMapping("/products")
 	void addProduct(@RequestBody Product product) {
 		repo.save(product);

@@ -24,6 +24,11 @@ public class ClientController {
 		return repo.findAll();
 	}
 	
+	//@GetMapping("/clients/{id}")
+	//Client getById(@PathVariable ("id") int id) {
+	//	return repo.findById(id);
+	//}
+	
 	@PostMapping("/clients")
 	void addClient(@RequestBody Client client) {
 		repo.save(client);

@@ -10,47 +10,54 @@ public class Sale {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	public int idsale;
-	public int idclient;
-	public int idproduct;
-	public int quantity;
-	public int sale_price;
-	public Date sale_date;
-	
-	public int getIdsale() {
-		return idsale;
+	@Column(name = "idsale")
+	public Integer idSale;
+	@Column(name = "idclient")
+	public Integer idClient;
+	@Column(name = "idproduct")
+	public Integer idProduct;
+	@Column(name = "quantity")
+	public Integer quantity;
+	@Column(name = "sale_price")
+	public Integer salePrice;
+	@Column(name = "sale_date")
+	public Date saleDate;
+	public Integer getIdSale() {
+		return idSale;
 	}
-	public void setIdsale(int idsale) {
-		this.idsale = idsale;
+	public void setIdSale(int idSale) {
+		this.idSale = idSale;
 	}
-	public int getIdclient() {
-		return idclient;
+	public Integer getIdClient() {
+		return idClient;
 	}
-	public void setIdclient(int idclient) {
-		this.idclient = idclient;
+	public void setIdClient(int idClient) {
+		this.idClient = idClient;
 	}
-	public int getIdproduct() {
-		return idproduct;
+	public Integer getIdProduct() {
+		return idProduct;
 	}
-	public void setIdproduct(int idproduct) {
-		this.idproduct = idproduct;
+	public void setIdProduct(int idProduct) {
+		this.idProduct = idProduct;
 	}
-	public int getQuantity() {
+	public Integer getQuantity() {
 		return quantity;
 	}
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	public int getSale_price() {
-		return sale_price;
+	public Integer getSalePrice() {
+		return salePrice;
 	}
-	public void setSale_price(int sale_price) {
-		this.sale_price = sale_price;
+	public void setSalePrice(int salePrice) {
+		this.salePrice = salePrice;
 	}
-	public Date getSale_date() {
-		return sale_date;
+	public Date getSaleDate() {
+		return saleDate;
 	}
-	public void setSale_date(Date sale_date) {
-		this.sale_date = sale_date;
+	public void setSaleDate(Date saleDate) {
+		this.saleDate = saleDate;
 	}
+	
+	
 }
